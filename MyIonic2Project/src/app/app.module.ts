@@ -5,6 +5,9 @@ import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
+import { DashboardPage } from '../pages/dashboard/dashboard';
+import { FIREBASE_PROVIDERS, defaultFirebase, AngularFire} from 'angularfire2';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +15,8 @@ import { LoginPage } from '../pages/login/login';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-	LoginPage
+	LoginPage,
+	DashboardPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -23,7 +27,8 @@ import { LoginPage } from '../pages/login/login';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-	LoginPage
+	LoginPage,
+  DashboardPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

@@ -3,23 +3,30 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Hello User</ion-title>
+    <ion-title>Login To Drive</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
-  <h3>Welcome to your login screen!</h3>
+    <ion-list>
 
-  <p>
-    Please login to continue
-  </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
-  </p>
-  <p>
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
-  </p>
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="user.UserName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" value="" [(ngModel)]="user.Password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div padding>
+      <button [disabled]="user.UserName.length == 0 || user.Password.length == 0" 
+        ion-button color="primary" block (click)="presentLoading()"> Sign In</button>
+    </div>
 
 </ion-content>
